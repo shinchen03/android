@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         // third activity
         Button thirdActivityBtn = (Button) findViewById(R.id.ThirdActivityBtn);
-        secondActivityBtn.setOnClickListener(new View.OnClickListener() {
+        thirdActivityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent startIntent = new Intent(getApplicationContext(), ThirdActivity.class);

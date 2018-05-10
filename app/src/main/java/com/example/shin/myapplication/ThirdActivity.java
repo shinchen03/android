@@ -20,6 +20,6 @@ public class ThirdActivity extends AppCompatActivity {
         myListView = (ListView) findViewById(R.id.myListView);
         items = res.getStringArray(R.array.items);
         myListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_listview_detail, items));
-        
+
     }
 }
