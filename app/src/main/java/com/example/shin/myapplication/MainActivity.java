@@ -1,5 +1,6 @@
 package com.example.shin.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -26,6 +27,28 @@ public class MainActivity extends AppCompatActivity {
                 int num2 = Integer.parseInt(t2.getText().toString());
                 int res = num1 + num2;
                 result.setText(res + "");
+            }
+        });
+
+        Button secondActivityBtn = (Button) findViewById(R.id.secondActivityBtn);
+        secondActivityBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startIntent = new Intent(getApplicationContext(), SecondActivity.class);
+                // pass information to another activity
+                TextView t = (TextView) findViewById(R.id.ResulttextView);
+                String res = t.getText().toString();
+                startIntent.putExtra("result", res);
+                startActivity(startIntent);
+            }
+        });
+
+        // attempt to launch an activity outside my app
+        Button googleBtn = (Button) findViewById(R.id.googleBtn);
+        googleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String google = "www.google.com";
             }
         });
     }
