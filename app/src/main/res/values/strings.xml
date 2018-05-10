@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">My test app</string>
+    <string-array name="items">
+        <item>apple</item>
+        <item>sony</item>
+        <item>huawei</item>
+    </string-array>
+    
+    <string-array name="prices">
+        <item>$999</item>
+        <item>$888</item>
+        <item>$777</item>
+    </string-array>
+
+    <string-array name="descriptions">
+        <item>Iphone X with 64GB</item>
+        <item>Xperia XZ2</item>
+        <item>Rongyao P10</item>
+    </string-array>
 </resources>
