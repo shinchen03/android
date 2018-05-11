@@ -28,7 +28,7 @@ public class DetailActivity extends AppCompatActivity {
     private int getImg(int index) {
         switch (index) {
             case 0: return R.drawable.iphone_x;
-            case 1: return R.drawable.xperia_zx2;
+            case 1: return R.drawable.xz2;
             case 2: return R.drawable.p10;
             default: return -1;
         }
