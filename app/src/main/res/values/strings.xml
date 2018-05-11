@@ -5,7 +5,7 @@
         <item>sony</item>
         <item>huawei</item>
     </string-array>
-    
+
     <string-array name="prices">
         <item>$999</item>
         <item>$888</item>

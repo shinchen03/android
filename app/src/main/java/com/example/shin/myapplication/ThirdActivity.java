@@ -1,8 +1,11 @@
 package com.example.shin.myapplication;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 public class ThirdActivity extends AppCompatActivity {
@@ -26,5 +29,13 @@ public class ThirdActivity extends AppCompatActivity {
         ItemAdapter itemAdapter = new ItemAdapter(this, items, prices, descriptions);
         myListView.setAdapter(itemAdapter);
 
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent showDetailActivity = new Intent(getApplicationContext(), DetailActivity.class);
+                showDetailActivity.putExtra("com.example.shin.Item_Index", i);
+                startActivity(showDetailActivity);
+            }
+        });
     }
 }
