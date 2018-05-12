@@ -72,5 +72,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(startIntent);
             }
         });
+
+        // database
+        Button forthdActivityBtn = (Button) findViewById(R.id.DataBaseBtn);
+        forthdActivityBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startIntent = new Intent(getApplicationContext(), Database.class);
+                startActivity(startIntent);
+            }
+        });
     }
 }
