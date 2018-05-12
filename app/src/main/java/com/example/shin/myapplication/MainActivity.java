@@ -10,9 +10,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    DataBaseHelper myDb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        myDb = new DataBaseHelper(this);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
