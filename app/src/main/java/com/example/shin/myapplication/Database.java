@@ -15,6 +15,7 @@ public class Database extends AppCompatActivity {
     Button adddataBtn;
     Button viewAllBtn;
     Button updateBtn;
+    Button deleteBtn;
 
 
     @Override
@@ -30,10 +31,11 @@ public class Database extends AppCompatActivity {
         viewAllBtn = findViewById(R.id.viewBtn);
         updateBtn = findViewById(R.id.updateBtn);
         editText_id = findViewById(R.id.editText_id);
+        deleteBtn = findViewById(R.id.deleteBtn);
         addData();
         viewAll();
         updateData();
-    }
+        deleteData();    }
 
     public void addData() {
         adddataBtn.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +93,17 @@ public class Database extends AppCompatActivity {
                         editText_price.getText().toString());
                 if (isupdated) Toast.makeText(Database.this, "Data updated", Toast.LENGTH_LONG).show();
                 else Toast.makeText(Database.this, "Data not updated", Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    public void deleteData() {
+        deleteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Integer deletedraws = myDb.deleteData(editText_id.getText().toString());
+                if (deletedraws > 0) Toast.makeText(Database.this, "Data deleted", Toast.LENGTH_LONG).show();
+                else Toast.makeText(Database.this, "Data not deleted", Toast.LENGTH_LONG).show();
             }
         });
     }
