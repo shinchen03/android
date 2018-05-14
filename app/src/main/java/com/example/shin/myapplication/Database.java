@@ -11,9 +11,11 @@ import android.widget.Toast;
 
 public class Database extends AppCompatActivity {
     DataBaseHelper myDb;
-    EditText editText_name, editText_brand, editText_price;
+    EditText editText_name, editText_brand, editText_price, editText_id;
     Button adddataBtn;
     Button viewAllBtn;
+    Button updateBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +28,11 @@ public class Database extends AppCompatActivity {
         editText_price = findViewById(R.id.editText_price);
         adddataBtn = findViewById(R.id.addBtn);
         viewAllBtn = findViewById(R.id.viewBtn);
+        updateBtn = findViewById(R.id.updateBtn);
+        editText_id = findViewById(R.id.editText_id);
         addData();
         viewAll();
+        updateData();
     }
 
     public void addData() {
@@ -76,4 +81,18 @@ public class Database extends AppCompatActivity {
         builder.setMessage(Message);
         builder.show();
     }
+
+    public void updateData() {
+        updateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean isupdated = myDb.updateData(editText_id.getText().toString(),
+                        editText_brand.getText().toString(),editText_name.getText().toString(),
+                        editText_price.getText().toString());
+                if (isupdated) Toast.makeText(Database.this, "Data updated", Toast.LENGTH_LONG).show();
+                else Toast.makeText(Database.this, "Data not updated", Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
 }
